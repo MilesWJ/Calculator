@@ -7,7 +7,7 @@ public class calculator {
         System.out.print("\nEnter the first number: ");
         double num1 = Input.nextDouble();
 
-        System.out.print("Enter the first number: ");
+        System.out.print("Enter the second number: ");
         double num2 = Input.nextDouble();
 
         System.out.print(
@@ -39,6 +39,5 @@ public class calculator {
         }
 
         Input.close();
-
     }
 }
