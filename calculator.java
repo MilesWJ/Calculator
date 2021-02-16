@@ -2,18 +2,17 @@ import java.util.Scanner;
 
 public class calculator {
     public static void main(String[] agrs) {
-        Scanner num1Input = new Scanner(System.in);
+        Scanner Input = new Scanner(System.in);
+
         System.out.print("\nEnter the first number: ");
-        double num1 = num1Input.nextDouble();
+        double num1 = Input.nextDouble();
 
-        Scanner num2Input = new Scanner(System.in);
         System.out.print("Enter the first number: ");
-        double num2 = num2Input.nextDouble();
+        double num2 = Input.nextDouble();
 
-        Scanner operationInput = new Scanner(System.in);
         System.out.print(
                 "\nWhat operation would you like to perform? [1, 2, 3, 4]\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nType here: ");
-        int operation = Math.abs(operationInput.nextInt());
+        int operation = Math.abs(Input.nextInt());
 
         if (operation == 1) {
             double answer = num1 + num2;
@@ -39,9 +38,7 @@ public class calculator {
             System.out.print("\n" + operation + " is not a valid operation selector.");
         }
 
-        num1Input.close();
-        num2Input.close();
-        operationInput.close();
-    }
+        Input.close();
 
+    }
 }
