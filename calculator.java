@@ -13,7 +13,7 @@ public class calculator {
         Scanner operationInput = new Scanner(System.in);
         System.out.print(
                 "\nWhat operation would you like to perform? [1, 2, 3, 4]\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nType here: ");
-        int operation = operationInput.nextInt();
+        int operation = Math.abs(operationInput.nextInt());
 
         if (operation == 1) {
             double answer = num1 + num2;
