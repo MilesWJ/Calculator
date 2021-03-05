@@ -1,57 +1,71 @@
-import java.util.Scanner;
+#include <iostream>
 
-public class calculator {
-    public static void main(String[] agrs) {
-        Scanner Input = new Scanner(System.in);
+class Calculator
+{
+public:
 
-        System.out.print("\nEnter the first number: ");
-        double number1 = Input.nextDouble();
+	double number1;
+	double number2;
+	int operation;
 
-        System.out.print("Enter the second number: ");
-        double number2 = Input.nextDouble();
+	void add(double num1, double num2) // Function for addition.
+	{
+		double answer = num1 + num2;
+		std::cout << "\nThe sum of " << num1 << " and " << num2 << " is " << answer << "!";
+	}
 
-        System.out.print(
-                "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter the operation number would you like to perform: ");
-        int operation = Math.abs(Input.nextInt());
+	void subtract(double num1, double num2) // Function for subtraction.
+	{
+		double answer = num1 - num2;
+		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
+	}
 
-        Input.close();
+	void multiply(double num1, double num2) // Function for mutiplication.
+	{
+		double answer = num1 * num2;
+		std::cout << "\nThe product of " << num1 << " and " << num2 << " is " << answer << "!";
+	}
 
-        switch (operation) {
-            case 1:
-                add(number1, number2);
-                break;
-            case 2:
-                sub(number1, number2);
-                break;
-            case 3:
-                mul(number1, number2);
-                break;
-            case 4:
-                div(number1, number2);
-                break;
-            default:
-                System.out.println("\n" + operation + " is an invalid operation...");
-                break;
-        }
-    }
+	void divide(double num1, double num2) // Function for division.
+	{
+		double answer = num1 / +num2;
+		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
+	}
+};
 
-    public static void add(double num1, double num2) {
-        double answer = num1 + num2;
-        System.out.print("\nThe sum of " + num1 + " and " + num2 + " is " + answer + "!");
-    }
+int main() // Runs the main function of the calculator.
+{
+	Calculator Calculator{};
 
-    public static void sub(double num1, double num2) {
-        double answer = num1 - num2;
-        System.out.print("\nThe difference of " + num1 + " and " + num2 + " is " + answer + "!");
-    }
+	Calculator.number1; // Input for the first number.
+	std::cout << "Enter the first number: ";
+	std::cin >> Calculator.number1;
 
-    public static void mul(double num1, double num2) {
-        double answer = num1 * num2;
-        System.out.print("\nThe product of " + num1 + " and " + num2 + " is " + answer + "!");
-    }
+	Calculator.number2; // Input for the second number.
+	std::cout << "Enter the second number: ";
+	std::cin >> Calculator.number2;
 
-    public static void div(double num1, double num2) {
-        double answer = num1 / num2;
-        System.out.print("\nThe quotient of " + num1 + " and " + num2 + " is " + answer + "!");
-    }
+	Calculator.operation; // Input for the operation type.
+	std::cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter the operation number would you like to perform: ";
+	std::cin >> Calculator.operation;
+
+	switch (Calculator.operation) // Switch to run the correct operation type. (If operation > 4, defaults to "invalid")
+	{
+	case 1:
+		Calculator.add(Calculator.number1, Calculator.number2);
+		break;
+	case 2:
+		Calculator.subtract(Calculator.number1, Calculator.number2);
+		break;
+	case 3:
+		Calculator.multiply(Calculator.number1, Calculator.number2);
+		break;
+	case 4:
+		Calculator.divide(Calculator.number1, Calculator.number2);
+		break;
+	default:
+		std::cout << Calculator.operation << " is an invalid opertation..." << std::endl;
+		break;
+	}
+	return 0;
 }
