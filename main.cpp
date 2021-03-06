@@ -7,70 +7,65 @@ public:
 	double number1;
 	double number2;
 	int operation;
+	enum operation { add = 1, sub = 2, mul = 3, div = 4 };
 
-	void add(double num1, double num2) // Function for addition.
+	void addition(double num1, double num2)
 	{
 		double answer = num1 + num2;
 		std::cout << "\nThe sum of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
 
-	void subtract(double num1, double num2) // Function for subtraction.
+	void subtraction(double num1, double num2)
 	{
 		double answer = num1 - num2;
 		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
 
-	void multiply(double num1, double num2) // Function for mutiplication.
+	void multiplication(double num1, double num2)
 	{
 		double answer = num1 * num2;
 		std::cout << "\nThe product of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
 
-	void divide(double num1, double num2) // Function for division.
+	void division(double num1, double num2)
 	{
 		double answer = num1 / num2;
 		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
 
-	void calculate(double number1, double number2, int operation) {
-
-		Calculator Calculator;
-
-		switch (operation) // Switch to run the correct operation type. (If operation > 4, defaults to "invalid")
+	void calculate(double number1, double number2, int operation)
+	{
+		switch (operation)
 		{
-		case 1:
-			Calculator.add(number1, number2);
+		case add:
+			Calculator::addition(number1, number2);
 			break;
-		case 2:
-			Calculator.subtract(number1, number2);
+		case sub:
+			Calculator::subtraction(number1, number2);
 			break;
-		case 3:
-			Calculator.multiply(number1, number2);
+		case mul:
+			Calculator::multiplication(number1, number2);
 			break;
-		case 4:
-			Calculator.divide(number1, number2);
+		case div:
+			Calculator::division(number1, number2);
 			break;
 		default:
 			std::cout << operation << " is an invalid opertation..." << std::endl;
 			break;
 		}
-
 	}
 };
 
-int main() // Runs the main function of the calculator.
+int main()
 {
 	Calculator Calculator;
 
-	Calculator.number1; // Input for the first number.
 	std::cout << "Enter the first number: ";
 	std::cin >> Calculator.number1;
 
-	Calculator.number2; // Input for the second number.
 	std::cout << "Enter the second number: ";
 	std::cin >> Calculator.number2;
 
-	Calculator.operation; // Input for the operation type.
 	std::cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter the operation number would you like to perform: ";
 	std::cin >> Calculator.operation;
 
