@@ -28,7 +28,7 @@ public:
 
 	void divide(double num1, double num2) // Function for division.
 	{
-		double answer = num1 / +num2;
+		double answer = num1 / num2;
 		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
 };
