@@ -31,11 +31,36 @@ public:
 		double answer = num1 / num2;
 		std::cout << "\nThe difference of " << num1 << " and " << num2 << " is " << answer << "!";
 	}
+
+	void calculate(double number1, double number2, int operation) {
+
+		Calculator Calculator;
+
+		switch (operation) // Switch to run the correct operation type. (If operation > 4, defaults to "invalid")
+		{
+		case 1:
+			Calculator.add(number1, number2);
+			break;
+		case 2:
+			Calculator.subtract(number1, number2);
+			break;
+		case 3:
+			Calculator.multiply(number1, number2);
+			break;
+		case 4:
+			Calculator.divide(number1, number2);
+			break;
+		default:
+			std::cout << operation << " is an invalid opertation..." << std::endl;
+			break;
+		}
+
+	}
 };
 
 int main() // Runs the main function of the calculator.
 {
-	Calculator Calculator{};
+	Calculator Calculator;
 
 	Calculator.number1; // Input for the first number.
 	std::cout << "Enter the first number: ";
@@ -49,23 +74,5 @@ int main() // Runs the main function of the calculator.
 	std::cout << "\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter the operation number would you like to perform: ";
 	std::cin >> Calculator.operation;
 
-	switch (Calculator.operation) // Switch to run the correct operation type. (If operation > 4, defaults to "invalid")
-	{
-	case 1:
-		Calculator.add(Calculator.number1, Calculator.number2);
-		break;
-	case 2:
-		Calculator.subtract(Calculator.number1, Calculator.number2);
-		break;
-	case 3:
-		Calculator.multiply(Calculator.number1, Calculator.number2);
-		break;
-	case 4:
-		Calculator.divide(Calculator.number1, Calculator.number2);
-		break;
-	default:
-		std::cout << Calculator.operation << " is an invalid opertation..." << std::endl;
-		break;
-	}
-	return 0;
+	Calculator.calculate(Calculator.number1, Calculator.number2, Calculator.operation);
 }
