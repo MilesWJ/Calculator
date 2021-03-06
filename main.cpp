@@ -7,7 +7,7 @@ public:
 	double number1;
 	double number2;
 	int operation;
-	enum operation { add = 1, sub = 2, mul = 3, div = 4 };
+	enum operation { add = 1, sub, mul, div };
 
 	void addition(double num1, double num2)
 	{
